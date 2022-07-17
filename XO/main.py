@@ -16,4 +16,4 @@ while not game.game_over():
         print("error")
     game.print_board()
 
-print(f'{game.get_current_player()} is winner')
+print(game.winner())

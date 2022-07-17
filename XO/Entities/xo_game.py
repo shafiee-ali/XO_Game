@@ -46,7 +46,7 @@ class XOGame:
     def _is_end_game(self, x, y):
         if self.board.is_matched(x, y):
             self._game_over = True
-            self._winner = self.players[self.board[x][y]]
+            self._winner = self.board[x][y]
 
     def winner(self):
         return self._winner
