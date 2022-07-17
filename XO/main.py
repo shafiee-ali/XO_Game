@@ -1,16 +1,14 @@
-# This is a sample Python script.
+from Entities.xo_game import XOGame
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+game = XOGame(4, 3)
 
+game.print_board()
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+while not game.is_end_game():
+    print(f"It is player number {game.get_current_player()}s turn. Please enter a coordinate:")
+    x, y = map(int, input().split())
+    try:
+        game.action(x, y)
+    except:
+        print("error")
+    game.print_board()

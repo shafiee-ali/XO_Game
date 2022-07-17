@@ -1,4 +1,4 @@
-from board import Board
+from Entities.board import Board
 
 
 class XOBoard(Board):
@@ -6,5 +6,10 @@ class XOBoard(Board):
         super(XOBoard, self).__init__(n)
         self.chain_size = 3
 
-    def is_matched(self):
-        pass
+
+    # def is_matched(self):
+        # for i in range(self.size):
+        #     for j in range(self.size):
+
+
+

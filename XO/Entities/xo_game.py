@@ -8,9 +8,8 @@ class XOGame:
         :param n: Board size
         :param m: Number of players
         """
-        if n == 0:
-            raise Exception("wrong board size")
-        if m == 0:
+
+        if not Player.is_valid_player_numbers(m):
             raise Exception("wrong player numbers")
 
         self.players_count = m
@@ -26,17 +25,24 @@ class XOGame:
         :return:
         """
         self.board.fill_cell(x, y, self.curr_player_id)
-        self.next_player()
+        self.next()
 
 
-    def next_player(self):
+    def next(self):
         """
 
         :return:
         """
-        self.curr_player_id = (self.curr_player_id + 1) % self.players
+        self.curr_player_id = (self.curr_player_id + 1) % self.players_count
+
+    def get_current_player(self):
+        return self.curr_player_id
 
     def is_end_game(self):
-        return self.board.
+        return 0
 
-    def next(self, ):
+    def print_board(self):
+        print(self.board)
+
+    def is_matched(self):
+        pass
