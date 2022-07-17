@@ -13,6 +13,7 @@ class Board:
                 res += str(self.matrix[i][j]) + ' '
             res += '\n'
         return res
+
     def fill_cell(self, x: int, y: int, value: int) -> None:
         """
         Take coordinates of a cell in board and fill it

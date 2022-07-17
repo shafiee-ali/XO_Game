@@ -1,10 +1,13 @@
 from Entities.xo_game import XOGame
 
-game = XOGame(4, 3)
+m = int(input('Enter number of players: '))
+n = int(input('Enter board size: '))
+
+game = XOGame(n, m)
 
 game.print_board()
 
-while not game.is_end_game():
+while not game.game_over():
     print(f"It is player number {game.get_current_player()}s turn. Please enter a coordinate:")
     x, y = map(int, input().split())
     try:
@@ -12,3 +15,5 @@ while not game.is_end_game():
     except:
         print("error")
     game.print_board()
+
+print(f'{game.get_current_player()} is winner')
